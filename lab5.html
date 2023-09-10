@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+var calcAverage = (scores) => scores.reduce((sum, score) => sum + score, 0) / scores.length;
+
+
+var checkWinner = (avgDolhins, avgKoalas) => {
+  if (avgDolhins >= 2 * avgKoalas) {
+    console.log(`Cá heo thắng (${avgDolhins} vs. ${avgKoalas})`);
+  } else if (avgKoalas >= 2 * avgDolhins) {
+    console.log(`Gấu túi thắng (${avgKoalas} vs. ${avgDolhins})`);
+  } else {
+    console.log("Không có đội nào thắng!");
+  }
+};
+
+
+var scoresDolhins1 = [44, 23, 71];
+var scoresKoalas1 = [65, 54, 49];
+
+var scoresDolhins2 = [85, 54, 41];
+var scoresKoalas2 = [23, 34, 27];
+
+
+var avgDolhins1 = calcAverage(scoresDolhins1);
+var avgKoalas1 = calcAverage(scoresKoalas1);
+
+var avgDolhins2 = calcAverage(scoresDolhins2);
+var avgKoalas2 = calcAverage(scoresKoalas2);
+
+
+checkWinner(avgDolhins1, avgKoalas1);
+checkWinner(avgDolhins2, avgKoalas2);
+    </script>
+</body>
+</html>
